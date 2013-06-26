@@ -1,0 +1,242 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto|Black+Ops+One);
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+/* -------------------------------------
+ * For horizontal version, set the
+ * $vertical variable to false
+ * ------------------------------------- */
+/* -------------------------------------
+ * General Style
+ * ------------------------------------- */
+/* line 18, ../scss/_codepen.scss */
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  font-size: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #eee9dc;
+  background: #73a58c;
+}
+
+/* line 33, ../scss/_codepen.scss */
+h2 {
+  margin: 0.5em 0 0 0;
+  font-family: "Black Ops One", cursive;
+  font-size: 3em;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* line 42, ../scss/_codepen.scss */
+a, a:link, a:visited {
+  color: #73a58c;
+  background-color: #eee9dc;
+  text-decoration: none;
+  text-decoration-transition: all 0.4s linear;
+}
+
+/* line 50, ../scss/_codepen.scss */
+a:hover {
+  color: #f98262;
+}
+
+/* -------------------------------------
+ * timeline
+ * ------------------------------------- */
+/* line 58, ../scss/_codepen.scss */
+#timeline {
+  list-style: none;
+  margin: 50px 0 30px 120px;
+  padding-left: 30px;
+  border-left: 8px solid #eee9dc;
+}
+/* line 72, ../scss/_codepen.scss */
+#timeline li {
+  margin: 40px 0;
+  position: relative;
+}
+/* line 85, ../scss/_codepen.scss */
+#timeline p {
+  margin: 0 0 15px;
+}
+
+/* line 90, ../scss/_codepen.scss */
+.date {
+  margin-top: -10px;
+  top: 50%;
+  left: -158px;
+  max-width: 80px;
+  font-size: 0.95em;
+  line-height: 20px;
+  position: absolute;
+}
+
+/* line 108, ../scss/_codepen.scss */
+.circle {
+  margin-top: -10px;
+  top: 50%;
+  left: -44px;
+  width: 10px;
+  height: 10px;
+  background: #73a58c;
+  border: 5px solid #eee9dc;
+  border-radius: 50%;
+  display: block;
+  position: absolute;
+}
+
+/* line 129, ../scss/_codepen.scss */
+.content {
+  /* max-height: 20px */
+  padding: 50px 20px 0;
+  border-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 0.5em;
+  position: relative;
+}
+/* line 147, ../scss/_codepen.scss */
+.content:before, .content:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border: solid transparent;
+  position: absolute;
+  pointer-events: none;
+  right: 100%;
+}
+/* line 161, ../scss/_codepen.scss */
+.content:before {
+  border-right-color: inherit;
+  border-width: 20px;
+  top: 50%;
+  margin-top: -20px;
+}
+/* line 175, ../scss/_codepen.scss */
+.content:after {
+  border-right-color: #73a58c;
+  border-width: 17px;
+  top: 50%;
+  margin-top: -17px;
+}
+/* line 189, ../scss/_codepen.scss */
+.content p {
+  max-height: 0;
+  color: transparent;
+  text-align: justify;
+  word-break: break-word;
+  hyphens: auto;
+  overflow: hidden;
+}
+
+/* line 199, ../scss/_codepen.scss */
+label {
+  font-size: 1.3em;
+  position: absolute;
+  z-index: 100;
+  cursor: pointer;
+  top: 20px;
+  transition: transform 0.2s linear;
+}
+
+/* line 219, ../scss/_codepen.scss */
+.radio {
+  display: none;
+}
+
+/* line 225, ../scss/_codepen.scss */
+.radio:checked + .relative label {
+  cursor: auto;
+  transform: translateX(42px);
+  margin-right: 3em;
+}
+/* line 236, ../scss/_codepen.scss */
+.radio:checked + .relative .circle {
+  background: #f98262;
+}
+/* line 240, ../scss/_codepen.scss */
+.radio:checked ~ .content {
+  max-height: 200px;
+  border-color: #eee9dc;
+  margin-right: 20px;
+  transform: translateX(20px);
+  transition: max-height 0.4s linear, border-color 0.5s linear, transform 0.2s linear;
+}
+/* line 251, ../scss/_codepen.scss */
+.radio:checked ~ .content p {
+  max-height: 200px;
+  color: #eee9dc;
+  transition: color 0.3s linear 0.3s;
+}
+
+/* -------------------------------------
+ * mobile phones (vertical version only)
+ * ------------------------------------- */
+@media screen and (max-width: 767px) {
+  /* line 264, ../scss/_codepen.scss */
+  #timeline {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+  /* line 268, ../scss/_codepen.scss */
+  #timeline li {
+    margin: 50px 0;
+  }
+
+  /* line 272, ../scss/_codepen.scss */
+  label {
+    width: 85%;
+    font-size: 1.1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+    transform: translateX(18px);
+  }
+
+  /* line 281, ../scss/_codepen.scss */
+  .content {
+    padding-top: 45px;
+    border-color: #eee9dc;
+  }
+  /* line 284, ../scss/_codepen.scss */
+  .content:before, .content:after {
+    border: solid transparent;
+    bottom: 100%;
+  }
+  /* line 288, ../scss/_codepen.scss */
+  .content:before {
+    border-bottom-color: inherit;
+    border-width: 17px;
+    top: -16px;
+    left: 50px;
+    margin-left: -17px;
+  }
+  /* line 295, ../scss/_codepen.scss */
+  .content:after {
+    border-bottom-color: #73a58c;
+    border-width: 20px;
+    top: -20px;
+    left: 50px;
+    margin-left: -20px;
+  }
+  /* line 302, ../scss/_codepen.scss */
+  .content p {
+    font-size: 0.9em;
+    line-height: 1.4;
+  }
+
+  /* line 307, ../scss/_codepen.scss */
+  .circle, .date {
+    display: none;
+  }
+}
+/* line 313, ../scss/_codepen.scss */
+footer {
+  font-size: 80%;
+}
