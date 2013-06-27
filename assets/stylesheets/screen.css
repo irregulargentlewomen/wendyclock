@@ -92,7 +92,7 @@ a:hover {
 /* line 129, ../scss/_codepen.scss */
 .content {
   /* max-height: 20px */
-  padding: 50px 20px 0;
+  padding: 10px 20px 0;
   border-color: transparent;
   border-width: 2px;
   border-style: solid;
@@ -136,11 +136,10 @@ a:hover {
 /* line 199, ../scss/_codepen.scss */
 label {
   font-size: 1.3em;
-  position: absolute;
-  z-index: 100;
+  position: relative;
   cursor: pointer;
-  top: 20px;
-  transition: transform 0.2s linear;
+  left: -20px;
+  transition: left 0.2s linear;
 }
 
 /* line 219, ../scss/_codepen.scss */
@@ -149,10 +148,9 @@ label {
 }
 
 /* line 225, ../scss/_codepen.scss */
-.radio:checked + .relative label {
+.radio:checked ~ .content label {
   cursor: auto;
-  transform: translateX(42px);
-  margin-right: 3em;
+  left: 0;
 }
 /* line 236, ../scss/_codepen.scss */
 .radio:checked + .relative .circle {
